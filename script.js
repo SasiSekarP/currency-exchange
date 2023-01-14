@@ -13,7 +13,6 @@ function calculate() {
 
     fetch(`${url}${currencyOneValue}`).then((response) => response.json()).then((data) => {
         let rate = data.conversion_rates[currencyTwoValue];
-        console.log(data);
         document.getElementById('rate').textContent = `1 ${currencyOneValue} = ${rate} ${currencyTwoValue}`;
         document.getElementById('currencyTwoAmount').textContent = (rate * document.getElementById('currencyOneAmount').value);
         currencyTwoAmountEl.value = (currencyOneAmountEl.value * rate);
